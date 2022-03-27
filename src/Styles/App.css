@@ -1,0 +1,20 @@
+body{
+  background-color: #7e7e7e;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Nokora', sans-serif;
+}
+.SearchLocation{
+  font-size:25px;
+  color: white;
+  position: absolute;
+  top: 77%;
+  left:24%;
+  align-items:center;
+}
+.LocationSharp{
+  font-size:30px;
+  margin-left:20px;
+
+}
