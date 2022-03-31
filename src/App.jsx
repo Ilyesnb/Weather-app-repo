@@ -7,8 +7,7 @@ function App() {
     <div className="App">
 
       <ImgSaction/>
-      <InputSation/>
-      
+      <InputSation/>      
     
     </div>
   );

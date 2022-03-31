@@ -8,6 +8,7 @@ export const Container = styled.div`
 `;
 export const Heading = styled.h1`
   font-size: 30px;
+  font-weight:300;
   color: white;
   text-shadow: 2px 2px 8px black;
 `;
@@ -33,10 +34,13 @@ export const Input = styled.input`
   font-size: 16px;
   padding-left: 43px;
   outline: none;
-  box-shadow: 0 2px 7px 2px black;
+  box-shadow:0 5px 15px rgba(0,0,0,.2);
   align-items: center;
   margin-right:25px;
 `;
 export const InputSearch =styled.div`
+
+`
+export const Form = styled.form`
 
 `
