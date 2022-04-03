@@ -1,21 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    WeatherList : [],
-
-}
+  WeatherList:[],
+};
 
 const WeatherSlice = createSlice({
   name: "weathers",
   initialState,
   reducers: {
-      SaveWeather: (state,action) =>{
-          state.WeatherList.push(action.payload)
-            // console.log(action);
-      }
-  }
+    SaveWeather: (state, action) => {
+      state.WeatherList.push(action.payload);
+      // console.log(action);
+    },
+  },
 });
 
-export const {SaveWeather} = WeatherSlice.actions
-
-export default WeatherSlice.reducer
+export const { SaveWeather } = WeatherSlice.actions;
+export default WeatherSlice.reducer;

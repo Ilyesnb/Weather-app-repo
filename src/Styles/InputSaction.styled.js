@@ -34,7 +34,7 @@ export const Input = styled.input`
   font-size: 16px;
   padding-left: 43px;
   outline: none;
-  box-shadow:0 5px 15px rgba(0,0,0,.2);
+  box-shadow:0 25px 35px rgba(0,0,0,.2);
   align-items: center;
   margin-right:25px;
 `;

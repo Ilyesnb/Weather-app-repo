@@ -9,7 +9,7 @@ left: 49%;
 z-index:-1;
 border-radius:35px;
 margin-left:-10px;
-box-shadow:0 20px 30px rgba(0,0,0,.2);
+/* box-shadow:0 10px 20px rgba(0,0,0,.2); */
 border-color: black; 
 `
 export const Heading = styled.h1`
@@ -33,4 +33,17 @@ font-size:40px;
 position:absolute;
 left:25%;
 top:56%;
+`
+export const Title = styled.p`
+
+`
+export const TitleContainer = styled.div`
+
+`
+export const TodyWeather= styled.div` 
+
+`
+export const InfoContainer = styled.div`
+display:flex;
+justify-content:space-around;
 `
