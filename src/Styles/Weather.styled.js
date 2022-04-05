@@ -42,6 +42,7 @@ export const TitleContainer = styled.div`
 `
 export const TodyWeather= styled.div` 
 
+
 `
 export const InfoContainer = styled.div`
 display:flex;
@@ -54,3 +55,15 @@ export const Wall = styled.div`
   border-radius:6px;
   
 `
+export const WeatherImg = styled.img`
+width:120px;
+height:120px;
+margin-top:-60px;
+align-items:center;
+text-align:center;
+
+`
+export const WeatherIcons = styled.div`
+display:flex;
+`
+

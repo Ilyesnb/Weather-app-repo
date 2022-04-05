@@ -2,7 +2,7 @@ import Aos from 'aos'
 import "aos/dist/aos.css"
 import axios from "axios";
 import React,{useEffect,useState} from 'react'
-import {Container,Heading,WeatherInfo,DailyInfo,Title,TitleContainer,TodyWeather,InfoContainer,Wall} from "../Styles/Weather.styled"
+import {Container,Heading,WeatherInfo,DailyInfo,Title,TitleContainer,TodyWeather,InfoContainer,Wall,WeatherImg,WeatherIcons} from "../Styles/Weather.styled"
 function Weather() {
   const convertToKm = (aparent) =>{
     return aparent*0.001
@@ -10,19 +10,33 @@ function Weather() {
   const [forecast, setForecast] = useState({});
   useEffect(() => {
     Aos.init({ duration: 2000 });
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&units=imperial&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
        setForecast(res.data);
-       console.log(res.data);
+      //  console.log(res.data);
       });
   }, []);
+  const dateBuilder = (d) =>{
+    let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    let days =["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    let day = days[d.getDay()]
+    let date = d.getDate()
+    let month = months[d.getMonth()]
+    let year = d.getFullYear();
+    return `${day} ${date} ${month} ${year}`
+
+  }
   return (
     <Container>
       <Heading data-aos="zoom-out-right">Today</Heading>
       <WeatherInfo data-aos="zoom-out-right">
         <InfoContainer>
           <TodyWeather>
-            {forecast.main ? <p style={{fontSize:"35px"}}>{forecast.main.temp.toFixed()}°F</p>  : null}
-            {forecast.weather ? <img src="http://openweathermap.org/img/wn/.png" alt=""/>: null}
+            {forecast.main ? <p style={{fontSize:"35px",textAlign:"center"}}>{forecast.main.temp.toFixed()}°F</p>  : null}
+            <WeatherIcons>
+            {forecast.weather ? <h2 style={{textAlign:"center",marginTop:"-20px"}}>{forecast.weather[0].main}</h2> : null}
+            {forecast.weather ? <WeatherImg src={`http://openweathermap.org/img/wn/${forecast.weather[0].icon}@4x.png`} alt={`${forecast.weather[0].description}`}/> : null}
+            </WeatherIcons>
+            <div>{dateBuilder(new Date())}</div>
           </TodyWeather>
             <Wall/>
           <TitleContainer>

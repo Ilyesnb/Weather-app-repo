@@ -4,7 +4,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import axios from "axios"
 
 function ForeCast() {
-  const [city, setCity] = useState([])
+  const [city, setCity] = useState({})
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
        setCity(res.data);
