@@ -45,5 +45,12 @@ export const TodyWeather= styled.div`
 `
 export const InfoContainer = styled.div`
 display:flex;
-justify-content:space-around;
+justify-content:space-evenly;
+`
+export const Wall = styled.div`
+ border-left: 4px solid #cecece;
+  height: 200px;
+  margin-top:15px;
+  border-radius:6px;
+  
 `

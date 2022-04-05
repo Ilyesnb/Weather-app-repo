@@ -21,6 +21,7 @@ const InputSation = () => {
   };
   const handelChange = (event) => {
     setLocation(event.target.value);
+   
   };
   return (
     <Container>
