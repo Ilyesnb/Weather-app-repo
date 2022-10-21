@@ -4,6 +4,10 @@ import { IoLocationSharp } from "react-icons/io5";
 import axios from "axios"
 
 function ForeCast({l}) {
+  // const test = ()=> {
+  //   if()
+
+  // }
   const [city, setCity] = useState({})
   useEffect(() => {
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${l}&units=metric&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
@@ -18,7 +22,7 @@ function ForeCast({l}) {
           <IoLocationSharp className="LocationSharp" />
           <LocationInfo>
             <p className="indication">Current Location</p>
-            {city.sys? <h3 className="city-info">{city.name},{city.sys.country} </h3>: null}
+            {city.sys? <h3 className="city-info">{city.name},{city.sys.country}</h3>: "no location"}
           </LocationInfo>
         </Location>
       </Forecast>
