@@ -29,7 +29,7 @@ const InputSation = ({ setl}) => {
   useEffect(()=>{
     axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location ? location : "london"}&units=metric&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
       setNodata(res.data);
-       console.log(res.data);
+      //  console.log(res.data);
       });
   },[])
   

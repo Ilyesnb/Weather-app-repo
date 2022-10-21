@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  WeatherList:[],
+  WeatherList: [] 
 };
 
 const WeatherSlice = createSlice({
@@ -10,7 +10,7 @@ const WeatherSlice = createSlice({
   reducers: {
     SaveWeather: (state, action) => {
       state.WeatherList.push(action.payload);
-      // console.log(action);
+      console.log(action);
     },
   },
 });
