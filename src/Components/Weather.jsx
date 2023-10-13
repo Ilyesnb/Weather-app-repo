@@ -3,18 +3,18 @@ import "aos/dist/aos.css"
 import axios from "axios";
 import React,{useEffect,useState} from 'react'
 import {Container,Heading,WeatherInfo,DailyInfo,Title,TitleContainer,TodyWeather,InfoContainer,Wall,WeatherImg,WeatherIcons} from "../Styles/Weather.styled"
-function Weather({l}) {
+function Weather() {
   const convertToKm = (aparent) =>{
     return Math.round(aparent*0.001)
   }
   const [forecast, setForecast] = useState({});
   useEffect(() => {
     Aos.init({ duration: 2000 });
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${l}&units=metric&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
        setForecast(res.data);
       //  console.log(res.data);
       });
-  }, [l]);
+  }, []);
   const dateBuilder = (d) =>{
     let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     let days =["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]

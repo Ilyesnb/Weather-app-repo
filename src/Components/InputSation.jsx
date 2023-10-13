@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { SaveWeather } from "../Redux/Slices/WeatherSlice";
 import axios from "axios"
 
-const InputSation = ({ setl}) => {
+const InputSation = () => {
   const [location, setLocation] = useState("");
   const [nodata, setNodata] = useState([])
   const dispatch = useDispatch();
@@ -19,7 +19,6 @@ const InputSation = ({ setl}) => {
         id: Date.now(),
       })
     );
-    setl(location)
     setLocation("")
   }
   const handelChange = (event) => {

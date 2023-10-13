@@ -4,15 +4,15 @@ import BackgroundImg from "../images/lake-background.jpg";
 import Weather from "./Weather";
 import ForeCast from "./ForeCast";
 import { useSelector } from "react-redux"
-function ImgSaction({l}) {
+function ImgSaction() {
   const WeatherApp = useSelector(state => state.weathers.WeatherList)
   return (
     <Container>
       <Img src={BackgroundImg} alt="la nature" />
-      <ForeCast l={l}/>
+      <ForeCast />
       {
         WeatherApp.map(index =>(
-          <Weather l={l} key={index.id} />
+          <Weather key={index} />
 
         ))
       }

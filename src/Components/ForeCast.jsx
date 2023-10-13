@@ -3,18 +3,18 @@ import {Forecast,Location,LocationInfo,Heading} from "../Styles/ForeCast.styled"
 import { IoLocationSharp } from "react-icons/io5";
 import axios from "axios"
 
-function ForeCast({l}) {
+function ForeCast() {
   // const test = ()=> {
   //   if()
 
   // }
   const [city, setCity] = useState({})
   useEffect(() => {
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${l}&units=metric&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=f45a44472af7bcbb3c8851f4ab70b16d`).then((res) => {
         setCity(res.data);
-        console.log(l, res.data);
+        console.log( res.data);
       });
-  }, [l]);
+  }, []);
   return (
     <Forecast>
         <Heading>forecast</Heading>

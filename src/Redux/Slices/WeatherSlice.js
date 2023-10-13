@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
-  WeatherList: [] 
+  WeatherList: [] ,
+  Location:"",
+
 };
 
 const WeatherSlice = createSlice({
@@ -12,8 +15,12 @@ const WeatherSlice = createSlice({
       state.WeatherList.push(action.payload);
       console.log(action);
     },
+    SetLocation :(state,action)=>{
+      state.Location=action.payload
+
+    }
   },
 });
 
-export const { SaveWeather } = WeatherSlice.actions;
+export const { SaveWeather,SetLocation  } = WeatherSlice.actions;
 export default WeatherSlice.reducer;
